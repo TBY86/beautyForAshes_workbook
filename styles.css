@@ -1,0 +1,186 @@
+/* styles.css */
+
+:root {
+    --green-primary: #2e7d32; /* Dark green for text and borders */
+    --green-light: #e8f5e9; /* Light green for backgrounds */
+    --white: #ffffff;
+    --gray-light: #f5f5f5;
+    --border-radius: 8px;
+    --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--gray-light);
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    background: var(--white);
+    padding: 40px;
+    box-shadow: var(--shadow);
+    border-radius: var(--border-radius);
+}
+
+.page {
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.page::after {
+    content: '✨';
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1.2em;
+    color: var(--green-primary);
+}
+
+h1, h2, h3 {
+    color: var(--green-primary);
+    text-align: center;
+}
+
+h1 {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
+    border-bottom: 2px solid var(--green-primary);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+blockquote {
+    font-style: italic;
+    text-align: center;
+    margin: 20px 0;
+    color: #555;
+}
+
+cite {
+    display: block;
+    text-align: right;
+    font-size: 0.9em;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li {
+    margin-bottom: 15px;
+    padding: 10px;
+    background: var(--green-light);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--green-primary);
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+.journal-section {
+    margin-bottom: 20px;
+}
+
+.journal-section label {
+    display: block;
+    font-weight: bold;
+    color: var(--green-primary);
+    margin-bottom: 5px;
+}
+
+.lined-textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 10px;
+    border: 1px solid var(--green-primary);
+    border-radius: var(--border-radius);
+    background-color: #fafafa; /* Slightly off-white/gray to stand out */
+    line-height: 1.5; /* Normal line height without forced lines */
+    resize: vertical;
+    font-family: inherit;
+    font-size: 1em;
+}
+
+.completion {
+    display: flex;
+    align-items: center;
+    background: var(--green-light);
+    padding: 10px;
+    border: 1px solid var(--green-primary);
+    border-radius: var(--border-radius);
+    margin-top: 20px;
+}
+
+.completion input[type="checkbox"] {
+    margin-right: 10px;
+    accent-color: var(--green-primary);
+}
+
+.completion label {
+    color: var(--green-primary);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h3 {
+        font-size: 1.4rem;
+    }
+}
+
+.page:not(#page1) {
+    display: none;
+}
+
+.navigation {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.navigation button {
+    background: var(--green-light);
+    border: 1px solid var(--green-primary);
+    padding: 10px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    color: #333;
+    font-size: 1em;
+    transition: background 0.3s ease;
+}
+
+.navigation button:hover {
+    background: #c8e6c9;
+}
